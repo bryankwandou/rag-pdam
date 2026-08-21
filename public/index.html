@@ -224,7 +224,17 @@
     .source-tag {
       font-size: 11px; padding: 4px 10px; border-radius: 6px;
       background: var(--tag-bg); color: var(--tag-text);
+      border: 1px solid var(--border-color);
       font-weight: 700; letter-spacing: -0.01em;
+      cursor: pointer; transition: all 0.15s ease-in-out;
+      display: inline-flex; align-items: center; gap: 4px;
+      font-family: var(--font-family);
+    }
+    .source-tag:hover {
+      background: var(--color-primary); color: #ffffff;
+      border-color: var(--color-primary);
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px var(--color-primary-glow);
     }
 
     .msg-content strong { font-weight: 700; }
@@ -659,7 +669,7 @@
         var cats = sources.slice(0, 3).map(function(s) { return s.category; });
         var uniqueCats = cats.filter(function(v, i, a) { return a.indexOf(v) === i; });
         sourcesHtml = '<div class="msg-sources">' + uniqueCats.map(function(c) {
-          return '<span class="source-tag">' + escapeHtml(c) + '</span>';
+          return '<button class="source-tag" onclick="sendQuickAction(this.dataset.query)" data-query="' + escapeHtml(c) + '" title="Tanyakan tentang ' + escapeHtml(c) + '"><span class="material-icons-round" style="font-size:12px;">search</span> ' + escapeHtml(c) + '</button>';
         }).join("") + '</div>';
       }
 
