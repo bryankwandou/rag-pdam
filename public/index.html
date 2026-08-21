@@ -77,6 +77,7 @@
     }
 
     /* ───── Full-Height Responsive Chat Application Layout ───── */
+    /* ───── Full-Bleed Edge-to-Edge Flexible Layout ───── */
     #app {
       position: relative;
       z-index: 1;
@@ -84,13 +85,10 @@
       flex-direction: column;
       height: 100%;
       height: 100dvh;
-      width: 100%;
-      max-width: 960px;
-      margin: 0 auto;
+      width: 100vw;
+      max-width: 100%;
+      margin: 0;
       background: var(--bg-surface);
-      box-shadow: var(--shadow-app);
-      border-left: 1px solid var(--border-color);
-      border-right: 1px solid var(--border-color);
     }
 
     /* ───── Header ───── */
@@ -151,8 +149,9 @@
     .chat-messages::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 3px; }
 
     .message {
-      display: flex; gap: 12px; max-width: 85%; width: 100%;
+      display: flex; gap: 12px; max-width: 960px; width: 100%;
       animation: msgFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      margin: 0 auto;
     }
 
     @keyframes msgFadeIn {
@@ -255,6 +254,7 @@
     .quick-actions {
       padding: 8px 24px 12px; display: flex; gap: 8px;
       flex-wrap: wrap; flex-shrink: 0; z-index: 5;
+      max-width: 960px; margin: 0 auto; width: 100%;
     }
 
     .quick-btn {
@@ -275,6 +275,7 @@
       border-top: 1px solid var(--border-color);
       flex-shrink: 0;
       z-index: 10;
+      width: 100%;
     }
 
     .input-wrapper {
@@ -282,6 +283,7 @@
       background: var(--bg-input); border: 1.5px solid var(--border-color);
       border-radius: 16px; padding: 8px 10px 8px 16px;
       transition: border-color 0.2s, box-shadow 0.2s;
+      max-width: 960px; margin: 0 auto; width: 100%;
     }
     .input-wrapper:focus-within {
       border-color: var(--color-primary);
