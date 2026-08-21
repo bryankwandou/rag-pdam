@@ -3,56 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>CS PDAM Kota Makassar - Asisten Virtual</title>
-  <meta name="description" content="Asisten Virtual Customer Service Perumda Air Minum Kota Makassar. Tanyakan tentang tarif, pengaduan, sambungan baru, dan layanan tangki air.">
+  <title>Tanki Je'ne' & CS - PDAM Kota Makassar</title>
+  <meta name="description" content="Layanan Customer Service & Mobil Tangki Air Perumda Air Minum Kota Makassar. Tanyakan tarif, pengaduan, sambungan baru, dan tangki air.">
   <link rel="icon" href="/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
   <style>
-    /* ───── Official Theme Tokens from tanki-request repo ───── */
+    /* ───── Design Tokens matching tangki.pdammakassar.co.id ───── */
     :root {
-      --color-primary: #0284c7;
-      --color-primary-dark: #0369a1;
-      --color-primary-glow: rgba(2, 132, 199, 0.15);
+      --color-brand-blue: #0284c7;
+      --color-brand-blue-dark: #0369a1;
+      --color-navy: #0a2540;
+      --color-sky-light: #f0f9ff;
+      --color-sky-border: #e0f2fe;
       --font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
     }
 
     [data-theme="dark"] {
-      --color-background: #111928;
-      --color-surface: #1f2a37;
-      --color-surface-hover: #374151;
-      --color-surface-card: rgba(31, 42, 55, 0.85);
-      --color-on-surface: #f9fafb;
-      --color-on-surface-muted: #9ca3af;
-      --color-border: #27303e;
-      --color-message-user: #0369a1;
-      --color-message-bot: #1f2a37;
-      --color-input-bg: #122031;
-      --color-scrollbar: #27303e;
-      --color-scrollbar-hover: #374151;
-      --color-tag-bg: rgba(2, 132, 199, 0.15);
-      --color-tag-text: #38bdf8;
-      --shadow-elevated: 0 10px 40px rgba(0, 0, 0, 0.4);
+      --bg-page: #061527;
+      --bg-hero: linear-gradient(135deg, #061527 0%, #0a2540 50%, #034b75 100%);
+      --bg-card: #0d1f35;
+      --bg-card-elevated: #132842;
+      --bg-input: #081524;
+      --text-main: #f0f9ff;
+      --text-muted: #94a3b8;
+      --text-sub: #7dd3fc;
+      --border-color: #1e3a5f;
+      --msg-user: #0284c7;
+      --msg-bot: #132842;
+      --shadow-card: 0 20px 50px rgba(0, 0, 0, 0.4);
     }
 
     [data-theme="light"] {
-      --color-background: #eff4fb;
-      --color-surface: #ffffff;
-      --color-surface-hover: #f3f4f6;
-      --color-surface-card: rgba(255, 255, 255, 0.9);
-      --color-on-surface: #111928;
-      --color-on-surface-muted: #6b7280;
-      --color-border: #e6ebf1;
-      --color-message-user: #e0f2fe;
-      --color-message-bot: #f8fafc;
-      --color-input-bg: #ffffff;
-      --color-scrollbar: #cbd5e1;
-      --color-scrollbar-hover: #94a3b8;
-      --color-tag-bg: rgba(2, 132, 199, 0.1);
-      --color-tag-text: #0284c7;
-      --shadow-elevated: 0 10px 30px rgba(0, 0, 0, 0.08);
+      --bg-page: #f0f9ff;
+      --bg-hero: linear-gradient(135deg, #0a2540 0%, #07335c 50%, #0284c7 100%);
+      --bg-card: #ffffff;
+      --bg-card-elevated: #ffffff;
+      --bg-input: #f8fafc;
+      --text-main: #0a2540;
+      --text-muted: #64748b;
+      --text-sub: #0284c7;
+      --border-color: #e2e8f0;
+      --msg-user: #0284c7;
+      --msg-bot: #f1f5f9;
+      --shadow-card: 0 20px 50px rgba(10, 37, 64, 0.12);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -62,108 +58,250 @@
       height: 100dvh;
       width: 100%;
       font-family: var(--font-family);
-      background: var(--color-background);
-      color: var(--color-on-surface);
+      background: var(--bg-page);
+      color: var(--text-main);
       -webkit-font-smoothing: antialiased;
       overflow: hidden;
     }
 
-    /* ───── Official Cover Background Image from Repo ───── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url('/images/cover/cover-01.png');
-      background-size: cover;
-      background-position: center;
-      opacity: 0.12;
-      filter: blur(2px);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* ───── Full-Bleed Edge-to-Edge Flexible App Container ───── */
+    /* ───── Outer Layout ───── */
     #app {
-      position: relative;
-      z-index: 1;
       display: flex;
       flex-direction: column;
       height: 100%;
       height: 100dvh;
       width: 100vw;
-      max-width: 100%;
-      margin: 0;
-      background: var(--color-surface-card);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: var(--bg-hero);
+      position: relative;
     }
 
-    /* ───── Header ───── */
-    .chat-header {
+    /* ───── Top Navbar (matching tangki.pdammakassar.co.id) ───── */
+    .tj-navbar {
+      background: #ffffff;
+      border-bottom: 1px solid #e0f2fe;
+      padding: 12px 24px;
       display: flex;
       align-items: center;
-      gap: 14px;
-      padding: 14px 24px;
-      background: var(--color-surface);
-      border-bottom: 1px solid var(--color-border);
+      justify-content: space-between;
       flex-shrink: 0;
+      z-index: 20;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .nav-logo {
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
+    }
+
+    .nav-titles {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: #0a2540;
+      line-height: 1.2;
+    }
+
+    .nav-subtitle {
+      font-size: 11px;
+      font-weight: 600;
+      color: #0284c7;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-pill {
+      padding: 6px 16px;
+      border-radius: 9999px;
+      border: 1.5px solid #0284c7;
+      background: transparent;
+      color: #0284c7;
+      font-family: var(--font-family);
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-pill:hover {
+      background: #0284c7;
+      color: #ffffff;
+    }
+
+    .theme-toggle-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+      color: #0a2540;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .theme-toggle-btn:hover {
+      background: #e2e8f0;
+    }
+
+    /* ───── Hero Content & Chat Grid ───── */
+    .hero-container {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      max-width: 1240px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 24px;
+      align-items: center;
+      position: relative;
       z-index: 10;
+      min-height: 0;
     }
 
-    .header-logo {
-      width: 44px; height: 44px; border-radius: 12px;
-      overflow: hidden; flex-shrink: 0; background: #ffffff;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      padding: 2px;
+    /* Left Hero Details */
+    .hero-left {
+      color: #ffffff;
+      padding-right: 16px;
     }
 
-    .header-logo img { width: 100%; height: 100%; object-fit: contain; }
-    .header-info { flex: 1; min-width: 0; }
-    .header-title { font-size: 16px; font-weight: 800; line-height: 1.2; letter-spacing: -0.01em; color: var(--color-on-surface); }
-    .header-subtitle { font-size: 12px; color: var(--color-on-surface-muted); display: flex; align-items: center; gap: 6px; margin-top: 2px; }
-    .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #22ad5c; display: inline-block; flex-shrink: 0; animation: statusPulse 2s infinite; }
+    .hero-tag {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #7dd3fc;
+      margin-bottom: 12px;
+    }
+
+    .hero-heading {
+      font-size: 36px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 14px;
+      color: #ffffff;
+    }
+
+    .hero-desc {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #e0f2fe;
+      opacity: 0.9;
+      margin-bottom: 24px;
+      max-width: 460px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 24px;
+    }
+
+    .stat-item dt {
+      font-size: 20px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .stat-item dd {
+      font-size: 12px;
+      color: #bae6fd;
+      opacity: 0.85;
+    }
+
+    /* Right Chat Card Container (matching PublicRequestForm Card) */
+    .chat-card {
+      background: var(--bg-card);
+      border-radius: 24px;
+      box-shadow: var(--shadow-card);
+      border: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      max-height: 640px;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .chat-card-header {
+      padding: 16px 20px;
+      background: var(--bg-card-elevated);
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+
+    .chat-card-title {
+      font-size: 15px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22ad5c;
+      display: inline-block;
+      animation: statusPulse 2s infinite;
+    }
 
     @keyframes statusPulse {
       0%, 100% { box-shadow: 0 0 0 0 rgba(34, 173, 92, 0.4); }
       50% { box-shadow: 0 0 0 5px rgba(34, 173, 92, 0); }
     }
 
-    .header-actions { display: flex; gap: 6px; flex-shrink: 0; }
-    .icon-btn {
-      width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--color-border);
-      background: var(--color-surface); color: var(--color-on-surface-muted);
-      cursor: pointer; display: flex; align-items: center; justify-content: center;
-      transition: all 0.15s;
-    }
-    .icon-btn:hover { background: var(--color-surface-hover); color: var(--color-primary); border-color: var(--color-primary); }
-    .icon-btn .material-icons-round { font-size: 20px; }
-
-    /* ───── Chat Scroll Area (Flexible 100% Height) ───── */
+    /* Chat Messages List */
     .chat-messages {
       flex: 1;
       overflow-y: auto;
-      padding: 24px 24px 16px;
+      padding: 20px;
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 16px;
       scroll-behavior: smooth;
       min-height: 0;
     }
 
-    .chat-messages::-webkit-scrollbar { width: 6px; }
+    .chat-messages::-webkit-scrollbar { width: 5px; }
     .chat-messages::-webkit-scrollbar-track { background: transparent; }
-    .chat-messages::-webkit-scrollbar-thumb { background: var(--color-scrollbar); border-radius: 3px; }
-    .chat-messages::-webkit-scrollbar-thumb:hover { background: var(--color-scrollbar-hover); }
+    .chat-messages::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 3px; }
 
     .message {
-      display: flex; gap: 12px; max-width: 800px; width: 100%;
+      display: flex;
+      gap: 10px;
+      max-width: 88%;
       animation: msgFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      margin: 0 auto;
     }
 
     @keyframes msgFadeIn {
-      from { opacity: 0; transform: translateY(10px); }
+      from { opacity: 0; transform: translateY(8px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
@@ -171,84 +309,89 @@
     .message.bot { align-self: flex-start; }
 
     .msg-avatar {
-      width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
-      overflow: hidden; margin-top: 2px; background: #ffffff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 2px;
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      flex-shrink: 0;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 2px;
     }
     .msg-avatar img { width: 100%; height: 100%; object-fit: contain; }
-    .message.user .msg-avatar { display: none; }
 
     .msg-content {
-      padding: 14px 18px; border-radius: 18px; font-size: 14px;
-      line-height: 1.65; white-space: pre-wrap; word-break: break-word;
-      position: relative;
+      padding: 12px 16px;
+      border-radius: 16px;
+      font-size: 13.5px;
+      line-height: 1.6;
+      word-break: break-word;
     }
 
     .message.user .msg-content {
-      background: var(--color-primary);
+      background: var(--msg-user);
       color: #ffffff;
       border-bottom-right-radius: 4px;
-      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.25);
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
     }
 
     .message.bot .msg-content {
-      background: var(--color-surface);
-      color: var(--color-on-surface);
+      background: var(--msg-bot);
+      color: var(--text-main);
       border-bottom-left-radius: 4px;
-      border: 1px solid var(--color-border);
-      white-space: normal;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      border: 1px solid var(--border-color);
     }
 
     .msg-header-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .tts-btn {
-      background: var(--color-tag-bg);
-      border: 1px solid var(--color-border);
-      color: var(--color-primary);
+      background: rgba(2, 132, 199, 0.12);
+      border: 1px solid var(--border-color);
+      color: #0284c7;
       cursor: pointer;
-      padding: 3px 8px;
+      padding: 2px 8px;
       border-radius: 6px;
       display: inline-flex;
       align-items: center;
       gap: 4px;
       font-size: 11px;
-      font-weight: 600;
+      font-weight: 700;
       transition: all 0.15s;
     }
-    .tts-btn:hover { background: var(--color-primary); color: #ffffff; }
-    .tts-btn .material-icons-round { font-size: 15px; }
+    .tts-btn:hover { background: #0284c7; color: #ffffff; }
+    .tts-btn .material-icons-round { font-size: 14px; }
 
     .msg-sources {
-      margin-top: 12px; padding-top: 10px;
-      border-top: 1px solid var(--color-border);
+      margin-top: 10px; padding-top: 8px;
+      border-top: 1px solid var(--border-color);
       display: flex; flex-wrap: wrap; gap: 6px;
     }
 
     .source-tag {
-      font-size: 11px; padding: 4px 10px; border-radius: 6px;
-      background: var(--color-tag-bg); color: var(--color-tag-text);
-      font-weight: 600; letter-spacing: -0.01em;
+      font-size: 10.5px; padding: 3px 8px; border-radius: 6px;
+      background: rgba(2, 132, 199, 0.12); color: #38bdf8;
+      font-weight: 700;
+    }
+
+    [data-theme="light"] .source-tag {
+      color: #0284c7;
     }
 
     .msg-content strong { font-weight: 700; }
-    .msg-content em { font-style: italic; }
-    .msg-content code { background: rgba(2, 132, 199, 0.12); padding: 2px 6px; border-radius: 4px; font-size: 13px; font-family: monospace; }
-    .msg-content p { margin: 0 0 8px 0; }
+    .msg-content p { margin: 0 0 6px 0; }
     .msg-content p:last-child { margin-bottom: 0; }
-    .msg-content ol, .msg-content ul { margin: 6px 0 8px 0; padding-left: 22px; }
-    .msg-content li { margin-bottom: 4px; line-height: 1.55; }
-    .msg-content li:last-child { margin-bottom: 0; }
+    .msg-content ol, .msg-content ul { margin: 4px 0 6px 0; padding-left: 20px; }
+    .msg-content li { margin-bottom: 3px; }
 
-    .typing-indicator { display: flex; gap: 6px; padding: 6px 0; }
+    .typing-indicator { display: flex; gap: 5px; padding: 4px 0; }
     .typing-indicator span {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: var(--color-primary); opacity: 0.5;
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #0284c7; opacity: 0.5;
       animation: typingBounce 1.4s infinite ease-in-out;
     }
     .typing-indicator span:nth-child(2) { animation-delay: 0.16s; }
@@ -256,65 +399,94 @@
 
     @keyframes typingBounce {
       0%, 60%, 100% { transform: translateY(0); opacity: 0.3; }
-      30% { transform: translateY(-8px); opacity: 1; }
+      30% { transform: translateY(-7px); opacity: 1; }
     }
 
-    /* ───── Quick Actions Bar ───── */
+    /* Quick Actions */
     .quick-actions {
-      padding: 8px 24px 12px; display: flex; gap: 8px;
-      flex-wrap: wrap; flex-shrink: 0; z-index: 5;
-      max-width: 1000px; margin: 0 auto; width: 100%;
+      padding: 6px 20px 8px;
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      flex-shrink: 0;
     }
 
     .quick-btn {
-      padding: 7px 14px; border: 1px solid var(--color-border); border-radius: 20px;
-      background: var(--color-surface); color: var(--color-on-surface-muted);
-      font-family: var(--font-family); font-size: 12px; font-weight: 600;
-      cursor: pointer; transition: all 0.15s; white-space: nowrap;
-    }
-    .quick-btn:hover {
-      border-color: var(--color-primary); color: var(--color-primary);
-      background: var(--color-primary-glow);
+      padding: 5px 11px;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      background: var(--bg-card-elevated);
+      color: var(--text-muted);
+      font-family: var(--font-family);
+      font-size: 11.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+      white-space: nowrap;
     }
 
-    /* ───── Flexible Chat Input Area (No Redundant Footer) ───── */
+    .quick-btn:hover {
+      border-color: #0284c7;
+      color: #0284c7;
+      background: rgba(2, 132, 199, 0.1);
+    }
+
+    /* Input Area */
     .chat-input-area {
-      padding: 14px 24px 20px;
-      background: var(--color-surface);
-      border-top: 1px solid var(--color-border);
+      padding: 12px 18px 16px;
+      background: var(--bg-card-elevated);
+      border-top: 1px solid var(--border-color);
       flex-shrink: 0;
-      z-index: 10;
-      width: 100%;
     }
 
     .input-wrapper {
-      display: flex; align-items: flex-end; gap: 10px;
-      background: var(--color-input-bg); border: 1.5px solid var(--color-border);
-      border-radius: 16px; padding: 8px 10px 8px 16px;
-      transition: border-color 0.2s, box-shadow 0.2s;
-      max-width: 1000px; margin: 0 auto; width: 100%;
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      background: var(--bg-input);
+      border: 1.5px solid var(--border-color);
+      border-radius: 14px;
+      padding: 6px 8px 6px 14px;
+      transition: border-color 0.2s;
     }
+
     .input-wrapper:focus-within {
-      border-color: var(--color-primary);
-      box-shadow: 0 0 0 3.5px var(--color-primary-glow);
+      border-color: #0284c7;
     }
 
     #chatInput {
-      flex: 1; border: none; outline: none; background: transparent;
-      color: var(--color-on-surface); font-family: var(--font-family);
-      font-size: 14px; line-height: 1.5; resize: none; max-height: 120px; padding: 8px 0;
+      flex: 1;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: var(--text-main);
+      font-family: var(--font-family);
+      font-size: 13.5px;
+      line-height: 1.5;
+      resize: none;
+      max-height: 100px;
+      padding: 6px 0;
     }
-    #chatInput::placeholder { color: var(--color-on-surface-muted); }
 
-    /* Voice Recording & Send Buttons */
+    #chatInput::placeholder { color: var(--text-muted); }
+
     .btn-action {
-      width: 40px; height: 40px; border-radius: 12px; border: none;
-      background: transparent; color: var(--color-on-surface-muted); cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      transition: all 0.15s; flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s;
+      flex-shrink: 0;
     }
-    .btn-action:hover { background: var(--color-surface-hover); color: var(--color-primary); }
-    
+
+    .btn-action:hover { color: #0284c7; background: rgba(2, 132, 199, 0.1); }
+
     #micBtn.recording {
       background: #f23030 !important;
       color: #ffffff !important;
@@ -327,169 +499,192 @@
     }
 
     #sendBtn {
-      background: var(--color-primary); color: #ffffff;
-      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+      background: #0284c7;
+      color: #ffffff;
     }
     #sendBtn:hover { opacity: 0.9; }
-    #sendBtn:active { transform: scale(0.95); }
-    #sendBtn:disabled { opacity: 0.35; cursor: not-allowed; }
-    .btn-action .material-icons-round { font-size: 20px; }
 
-    /* ───── Welcome Screen (With Official Cover Backdrop) ───── */
-    .welcome-screen {
-      flex: 1; display: flex; flex-direction: column; align-items: center;
-      justify-content: center; padding: 36px 24px; text-align: center;
-      gap: 16px; background: var(--color-welcome-gradient); border-radius: 24px;
-      position: relative; overflow: hidden;
-      border: 1px solid var(--color-border);
+    /* Welcome Card inside Chat */
+    .welcome-card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
     }
 
-    .welcome-hero-backdrop {
+    .welcome-card-item {
+      padding: 12px;
+      background: var(--bg-card-elevated);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .welcome-card-item:hover {
+      border-color: #0284c7;
+      transform: translateY(-2px);
+    }
+
+    .welcome-item-icon {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #0284c7;
+      margin-bottom: 2px;
+    }
+    .welcome-item-desc {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* Signature Wave Divider from Repo */
+    .tj-wave {
       position: absolute;
-      inset: 0;
-      background-image: url('/images/cover/cover-01.png');
-      background-size: cover;
-      background-position: center;
-      opacity: 0.08;
+      inset-x: 0;
+      bottom: 0;
+      height: 80px;
+      width: 100%;
       pointer-events: none;
+      z-index: 1;
     }
 
-    .welcome-logo {
-      width: 90px; height: 90px; border-radius: 22px; overflow: hidden;
-      background: #ffffff; box-shadow: 0 10px 32px rgba(2, 132, 199, 0.2);
-      display: flex; align-items: center; justify-content: center;
-      position: relative; z-index: 1; padding: 4px;
-    }
-    .welcome-logo img { width: 100%; height: 100%; object-fit: contain; }
-
-    .welcome-title { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; position: relative; z-index: 1; }
-    .welcome-subtitle { font-size: 13px; font-weight: 800; color: var(--color-primary); letter-spacing: 0.05em; text-transform: uppercase; position: relative; z-index: 1; }
-    .welcome-desc { font-size: 14px; color: var(--color-on-surface-muted); max-width: 460px; line-height: 1.6; position: relative; z-index: 1; }
-
-    .welcome-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
-      width: 100%; max-width: 520px; margin-top: 8px; position: relative; z-index: 1;
-    }
-
-    .welcome-card {
-      padding: 14px 16px; background: var(--color-surface);
-      border: 1px solid var(--color-border); border-radius: 14px;
-      text-align: left; cursor: pointer;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .welcome-card:hover {
-      border-color: var(--color-primary); background: var(--color-primary-glow);
-      transform: translateY(-2px); box-shadow: 0 6px 20px var(--color-primary-glow);
-    }
-    .welcome-card-icon {
-      display: flex; align-items: center; gap: 8px;
-      font-size: 13px; margin-bottom: 4px; color: var(--color-primary); font-weight: 700;
-    }
-    .welcome-card-icon .material-icons-round { font-size: 18px; }
-    .welcome-card-text { font-size: 12px; color: var(--color-on-surface-muted); line-height: 1.4; }
-
-    /* ───── Responsive Adjustments ───── */
-    @media (max-width: 768px) {
-      #app { border-left: none; border-right: none; max-width: 100%; }
-      .chat-header { padding: 12px 16px; gap: 10px; }
-      .header-logo { width: 38px; height: 38px; }
-      .header-title { font-size: 15px; }
-      .chat-messages { padding: 16px 16px 12px; gap: 14px; }
-      .quick-actions { padding: 6px 16px 10px; gap: 6px; }
-      .chat-input-area { padding: 10px 16px 16px; }
-      .message { max-width: 90%; }
-      .welcome-grid { grid-template-columns: 1fr; }
-      .welcome-logo { width: 72px; height: 72px; }
-      .welcome-title { font-size: 19px; }
+    /* Responsive */
+    @media (max-width: 960px) {
+      body, html { overflow-y: auto; height: auto; }
+      #app { height: auto; min-height: 100dvh; }
+      .hero-container { grid-template-columns: 1fr; padding: 16px; gap: 20px; }
+      .hero-left { padding-right: 0; text-align: center; }
+      .hero-desc { margin: 0 auto 20px; }
+      .hero-stats { justify-content: center; }
+      .chat-card { max-height: 580px; }
+      .tj-wave { display: none; }
     }
   </style>
 </head>
 <body>
   <div id="app">
-    <header class="chat-header">
-      <div class="header-logo">
-        <img src="/images/logo/pdam-makassar.png" alt="PDAM Kota Makassar">
-      </div>
-      <div class="header-info">
-        <div class="header-title">PDAM Kota Makassar</div>
-        <div class="header-subtitle">
-          <span class="status-dot"></span>
-          Asisten Virtual Customer Service
+    <!-- Navbar matching tangki.pdammakassar.co.id -->
+    <header class="tj-navbar">
+      <a href="#" class="nav-brand">
+        <img src="/images/logo/pdam-makassar.png" alt="PDAM Makassar" class="nav-logo">
+        <div class="nav-titles">
+          <span class="nav-title">Tanki Je'ne' & CS</span>
+          <span class="nav-subtitle">PDAM Kota Makassar</span>
         </div>
-      </div>
-      <div class="header-actions">
-        <button class="icon-btn" id="themeToggle" title="Ganti tema">
+      </a>
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" id="themeToggle" title="Ganti Tema">
           <span class="material-icons-round">light_mode</span>
         </button>
-        <button class="icon-btn" id="clearChat" title="Hapus percakapan">
+        <button class="btn-pill" id="clearChat" title="Reset Chat">
           <span class="material-icons-round">refresh</span>
+          Reset Chat
         </button>
       </div>
     </header>
 
-    <div class="chat-messages" id="chatMessages">
-      <div class="welcome-screen" id="welcomeScreen">
-        <div class="welcome-hero-backdrop"></div>
-        <div class="welcome-logo">
-          <img src="/images/logo/pdam-makassar.png" alt="PDAM Kota Makassar">
-        </div>
-        <div class="welcome-subtitle">Perumda Air Minum</div>
-        <h1 class="welcome-title">Ada yang bisa kami bantu?</h1>
-        <p class="welcome-desc">
-          Tanyakan seputar layanan air bersih, tarif, pengaduan gangguan, sambungan baru, atau layanan Tanki Jene.
+    <!-- Main Hero Section with 2-Column Layout -->
+    <div class="hero-container">
+      <!-- Left Hero Info -->
+      <div class="hero-left">
+        <p class="hero-tag">Layanan Customer Service & Mobil Tangki · Makassar</p>
+        <h1 class="hero-heading">Air bersih, informasi cepat saat dibutuhkan.</h1>
+        <p class="hero-desc">
+          Tanyakan informasi tarif, prosedur sambungan baru, pengaduan gangguan, atau ajukan permintaan mobil tangki air PDAM Kota Makassar secara otomatis.
         </p>
-        <div class="welcome-grid">
-          <div class="welcome-card" onclick="sendQuickMessage('Bagaimana cara daftar sambungan baru PDAM?')">
-            <div class="welcome-card-icon">
-              <span class="material-icons-round">add_circle</span>
-              Sambungan Baru
-            </div>
-            <div class="welcome-card-text">Syarat, biaya, dan prosedur pemasangan</div>
+
+        <dl class="hero-stats">
+          <div class="stat-item">
+            <dt>24/7</dt>
+            <dd>Asisten virtual AI</dd>
           </div>
-          <div class="welcome-card" onclick="sendQuickMessage('Bagaimana cara cek tagihan PDAM online?')">
-            <div class="welcome-card-icon">
-              <span class="material-icons-round">receipt_long</span>
-              Cek Tagihan
-            </div>
-            <div class="welcome-card-text">Cek dan bayar tagihan air secara online</div>
+          <div class="stat-item">
+            <dt>Gratis</dt>
+            <dd>Layanan informasi</dd>
           </div>
-          <div class="welcome-card" onclick="sendQuickMessage('Air saya mati, harus lapor kemana?')">
-            <div class="welcome-card-icon">
-              <span class="material-icons-round">report_problem</span>
-              Pengaduan
-            </div>
-            <div class="welcome-card-text">Laporkan gangguan atau keluhan layanan</div>
+          <div class="stat-item">
+            <dt>Real-time</dt>
+            <dd>Respons cepat</dd>
           </div>
-          <div class="welcome-card" onclick="sendQuickMessage('Apa itu layanan Tanki Jene?')">
-            <div class="welcome-card-icon">
-              <span class="material-icons-round">local_shipping</span>
-              Tanki Jene
+        </dl>
+      </div>
+
+      <!-- Right Chat Card Container (matching PublicRequestForm Card) -->
+      <div class="chat-card">
+        <div class="chat-card-header">
+          <div class="chat-card-title">
+            <span class="status-dot"></span>
+            Asisten Virtual Customer Service
+          </div>
+          <span style="font-size:11px;color:var(--text-muted);font-weight:600;">Powered by RAG AI</span>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+          <div class="welcome-screen" id="welcomeScreen">
+            <p style="font-size:12px;font-weight:800;color:#0284c7;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px;">
+              Selamat Datang
+            </p>
+            <h2 style="font-size:18px;font-weight:800;margin-bottom:6px;">Ada yang bisa kami bantu?</h2>
+            <p style="font-size:12px;color:var(--text-muted);margin-bottom:12px;">Pilih topik populer atau ketik pertanyaan Anda:</p>
+            
+            <div class="welcome-card-grid">
+              <div class="welcome-card-item" onclick="sendQuickMessage('Bagaimana cara daftar sambungan baru PDAM?')">
+                <div class="welcome-item-icon">
+                  <span class="material-icons-round">add_circle</span> Sambungan Baru
+                </div>
+                <div class="welcome-item-desc">Syarat, biaya & prosedur</div>
+              </div>
+              <div class="welcome-card-item" onclick="sendQuickMessage('Bagaimana cara cek tagihan PDAM online?')">
+                <div class="welcome-item-icon">
+                  <span class="material-icons-round">receipt_long</span> Cek Tagihan
+                </div>
+                <div class="welcome-item-desc">Cek & bayar online</div>
+              </div>
+              <div class="welcome-card-item" onclick="sendQuickMessage('Air saya mati, harus lapor kemana?')">
+                <div class="welcome-item-icon">
+                  <span class="material-icons-round">report_problem</span> Pengaduan
+                </div>
+                <div class="welcome-item-desc">Lapor gangguan air</div>
+              </div>
+              <div class="welcome-card-item" onclick="sendQuickMessage('Apa itu layanan Tanki Jene?')">
+                <div class="welcome-item-icon">
+                  <span class="material-icons-round">local_shipping</span> Tanki Jene
+                </div>
+                <div class="welcome-item-desc">Request mobil tangki</div>
+              </div>
             </div>
-            <div class="welcome-card-text">Layanan permintaan mobil tangki air</div>
+          </div>
+        </div>
+
+        <div class="quick-actions" id="quickActions" style="display:none;">
+          <button class="quick-btn" onclick="sendQuickMessage('Cara bayar tagihan PDAM')">Bayar tagihan</button>
+          <button class="quick-btn" onclick="sendQuickMessage('Berapa tarif air PDAM?')">Info tarif</button>
+          <button class="quick-btn" onclick="sendQuickMessage('Nomor kontak PDAM Makassar')">Kontak CS</button>
+          <button class="quick-btn" onclick="sendQuickMessage('Air keruh bagaimana?')">Air keruh</button>
+        </div>
+
+        <div class="chat-input-area">
+          <div class="input-wrapper">
+            <textarea id="chatInput" rows="1" placeholder="Ketik pertanyaan atau gunakan suara..." autocomplete="off"></textarea>
+            <button class="btn-action" id="micBtn" title="Suara (Voice Input)">
+              <span class="material-icons-round">mic</span>
+            </button>
+            <button class="btn-action" id="sendBtn" title="Kirim">
+              <span class="material-icons-round">send</span>
+            </button>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="quick-actions" id="quickActions" style="display:none;">
-      <button class="quick-btn" onclick="sendQuickMessage('Cara bayar tagihan PDAM')">Bayar tagihan</button>
-      <button class="quick-btn" onclick="sendQuickMessage('Berapa tarif air PDAM?')">Info tarif</button>
-      <button class="quick-btn" onclick="sendQuickMessage('Nomor kontak PDAM Makassar')">Kontak CS</button>
-      <button class="quick-btn" onclick="sendQuickMessage('Air keruh bagaimana?')">Air keruh</button>
-      <button class="quick-btn" onclick="sendQuickMessage('Cara request tangki air')">Request tangki</button>
-    </div>
-
-    <div class="chat-input-area">
-      <div class="input-wrapper">
-        <textarea id="chatInput" rows="1" placeholder="Ketik atau gunakan suara..." autocomplete="off"></textarea>
-        <button class="btn-action" id="micBtn" title="Bicara (Voice Input)">
-          <span class="material-icons-round">mic</span>
-        </button>
-        <button class="btn-action" id="sendBtn" title="Kirim">
-          <span class="material-icons-round">send</span>
-        </button>
-      </div>
-    </div>
+    <!-- Signature Wave Divider from tangki.pdammakassar.co.id -->
+    <svg className="tj-wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path fill="#38bdf8" fill-opacity="0.2" d="M-120,70 C180,20 420,110 720,66 C1020,22 1260,104 1560,60 L1560,120 L-120,120 Z" />
+      <path fill="#0284c7" fill-opacity="0.15" d="M-120,86 C200,120 460,40 720,78 C980,116 1240,44 1560,82 L1560,120 L-120,120 Z" />
+    </svg>
   </div>
 
   <script>
@@ -502,7 +697,7 @@
     const quickActions = document.getElementById("quickActions");
     let isProcessing = false;
 
-    // ── Theme Management ──
+    // Theme Management
     const savedTheme = localStorage.getItem("pdam-theme");
     if (savedTheme) {
       document.documentElement.setAttribute("data-theme", savedTheme);
@@ -522,7 +717,7 @@
       icon.textContent = theme === "dark" ? "light_mode" : "dark_mode";
     }
 
-    // ── Clear Chat ──
+    // Clear Chat
     document.getElementById("clearChat").addEventListener("click", function() {
       var msgs = chatMessages.querySelectorAll(".message");
       msgs.forEach(function(m) { m.remove(); });
@@ -531,13 +726,13 @@
       if (window.speechSynthesis) window.speechSynthesis.cancel();
     });
 
-    // ── Auto-resize Textarea ──
+    // Auto-resize
     chatInput.addEventListener("input", function() {
       chatInput.style.height = "auto";
-      chatInput.style.height = Math.min(chatInput.scrollHeight, 120) + "px";
+      chatInput.style.height = Math.min(chatInput.scrollHeight, 100) + "px";
     });
 
-    // ── Keyboard Send (Enter) ──
+    // Enter Key
     chatInput.addEventListener("keydown", function(e) {
       if (e.key === "Enter" && !e.shiftKey) {
         e.preventDefault();
@@ -558,10 +753,9 @@
       sendMessage(text);
     }
 
-    // ── Voice Input (Speech Recognition) ──
+    // Voice Input (Speech Recognition)
     let recognition = null;
     let isRecording = false;
-
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
     if (SpeechRecognition) {
@@ -583,21 +777,13 @@
           transcript += event.results[i][0].transcript;
         }
         chatInput.value = transcript;
-        chatInput.style.height = "auto";
-        chatInput.style.height = Math.min(chatInput.scrollHeight, 120) + "px";
       };
 
-      recognition.onerror = function(event) {
-        console.warn("Speech recognition error:", event.error);
-        stopRecording();
-      };
-
+      recognition.onerror = function() { stopRecording(); };
       recognition.onend = function() {
         stopRecording();
         var text = chatInput.value.trim();
-        if (text && !isProcessing) {
-          sendMessage(text);
-        }
+        if (text && !isProcessing) sendMessage(text);
       };
 
       micBtn.addEventListener("click", function() {
@@ -605,11 +791,7 @@
           recognition.stop();
         } else {
           chatInput.value = "";
-          try {
-            recognition.start();
-          } catch(err) {
-            console.error("Mic start error:", err);
-          }
+          try { recognition.start(); } catch(e) {}
         }
       });
     } else {
@@ -619,26 +801,21 @@
     function stopRecording() {
       isRecording = false;
       micBtn.classList.remove("recording");
-      micBtn.title = "Bicara (Voice Input)";
+      micBtn.title = "Suara (Voice Input)";
       chatInput.placeholder = "Ketik atau gunakan suara...";
     }
 
-    // ── Text To Speech (Read Aloud) ──
+    // Text to Speech
     function speakText(text) {
       if (!window.speechSynthesis) return;
-      window.speechSynthesis.cancel(); // Stop current speech
-
-      // Clean HTML tags and markdown formatting before speaking
+      window.speechSynthesis.cancel();
       var plainText = text.replace(/<[^>]+>/g, '').replace(/\*/g, '').replace(/`/g, '');
       var utterance = new SpeechSynthesisUtterance(plainText);
       utterance.lang = 'id-ID';
-      utterance.rate = 1.0;
-      utterance.pitch = 1.0;
-
       window.speechSynthesis.speak(utterance);
     }
 
-    // ── Send & Append Messages ──
+    // Send Message
     async function sendMessage(text) {
       isProcessing = true;
       sendBtn.disabled = true;
@@ -666,7 +843,7 @@
         appendMessage("bot", data.answer, data.sources);
       } catch (err) {
         typingEl.remove();
-        appendMessage("bot", "Mohon maaf, terjadi kesalahan koneksi ke server. Pastikan server RAG berjalan di background.\n\nDetail: " + err.message);
+        appendMessage("bot", "Mohon maaf, terjadi kesalahan koneksi ke server.\n\nDetail: " + err.message);
       }
 
       isProcessing = false;
@@ -680,7 +857,7 @@
 
       var avatarHtml = "";
       if (role === "bot") {
-        avatarHtml = '<div class="msg-avatar"><img src="/images/logo/pdam-makassar.png" alt="PDAM" width="36" height="36"></div>';
+        avatarHtml = '<div class="msg-avatar"><img src="/images/logo/pdam-makassar.png" alt="PDAM" width="32" height="32"></div>';
       }
 
       var displayText = text;
@@ -699,11 +876,7 @@
       }
 
       var renderedText = role === "bot" ? markdownToHtml(displayText) : escapeHtml(displayText);
-
-      var ttsButtonHtml = "";
-      if (role === "bot") {
-        ttsButtonHtml = '<div class="msg-header-bar"><span></span><button class="tts-btn" onclick="speakText(this.dataset.text)" data-text="' + escapeHtml(displayText) + '" title="Dengarkan Suara"><span class="material-icons-round">volume_up</span> Baca</button></div>';
-      }
+      var ttsButtonHtml = role === "bot" ? '<div class="msg-header-bar"><span></span><button class="tts-btn" onclick="speakText(this.dataset.text)" data-text="' + escapeHtml(displayText) + '" title="Dengarkan Suara"><span class="material-icons-round">volume_up</span> Baca</button></div>' : '';
 
       wrapper.innerHTML = avatarHtml + '<div class="msg-content">' + ttsButtonHtml + renderedText + sourcesHtml + '</div>';
 
@@ -714,7 +887,7 @@
     function appendTyping() {
       var wrapper = document.createElement("div");
       wrapper.className = "message bot";
-      wrapper.innerHTML = '<div class="msg-avatar"><img src="/images/logo/pdam-makassar.png" alt="PDAM" width="36" height="36"></div>' +
+      wrapper.innerHTML = '<div class="msg-avatar"><img src="/images/logo/pdam-makassar.png" alt="PDAM" width="32" height="32"></div>' +
         '<div class="msg-content"><div class="typing-indicator"><span></span><span></span><span></span></div></div>';
       chatMessages.appendChild(wrapper);
       chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -727,35 +900,21 @@
       return div.innerHTML;
     }
 
-    /**
-     * Robust markdown-to-HTML converter.
-     * Converts **bold**, *italic*, `code`, lists to HTML.
-     */
     function markdownToHtml(text) {
       var html = escapeHtml(text);
-
-      // Inline code
       html = html.replace(/`([^`]+?)`/g, '<code>$1</code>');
-
-      // Bold: **text**
       var prev;
       do {
         prev = html;
         html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
         html = html.replace(/__(.+?)__/g, '<strong>$1</strong>');
       } while (html !== prev);
-
-      // Italic: *text*
       html = html.replace(/(?<!\w)\*([^*]+?)\*(?!\w)/g, '<em>$1</em>');
-
-      // Strip stray **
       html = html.replace(/\*\*/g, '');
 
-      // Block-level
       var lines = html.split('\n');
       var result = [];
-      var inOl = false;
-      var inUl = false;
+      var inOl = false, inUl = false;
 
       for (var i = 0; i < lines.length; i++) {
         var line = lines[i].trim();
@@ -773,21 +932,13 @@
         } else {
           if (inOl) { result.push('</ol>'); inOl = false; }
           if (inUl) { result.push('</ul>'); inUl = false; }
-          if (line === '') {
-            result.push('<br>');
-          } else {
-            result.push('<p>' + line + '</p>');
-          }
+          if (line === '') { result.push('<br>'); } else { result.push('<p>' + line + '</p>'); }
         }
       }
-
       if (inOl) result.push('</ol>');
       if (inUl) result.push('</ul>');
 
-      return result.join('\n')
-        .replace(/(<br>\s*){2,}/g, '<br>')
-        .replace(/^(<br>\s*)+/, '')
-        .replace(/(<br>\s*)+$/, '');
+      return result.join('\n').replace(/(<br>\s*){2,}/g, '<br>').replace(/^(<br>\s*)+/, '').replace(/(<br>\s*)+$/, '');
     }
   </script>
 </body>
