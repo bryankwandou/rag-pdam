@@ -4,7 +4,7 @@
     "last_updated": "2026-08-21",
     "version": "2.0.0-comprehensive",
     "language": "id",
-    "total_entries": 34
+    "total_entries": 23
   },
   "categories": [
     {
@@ -12,7 +12,7 @@
       "title": "Prosedur Sambungan Baru",
       "entries": [
         {
-          "question": "Bagaimana cara mendaftar sambungan baru PDAM Kota Makassar?",
+          "question": "Bagaimana cara mendaftar sambungan baru PDAM?",
           "answer": "Untuk mendaftar sambungan baru PDAM Kota Makassar, Anda dapat mendaftar secara online melalui website resmi pdammks.co.id, aplikasi PDAM INFO, atau datang langsung ke kantor pelayanan PDAM terdekat (Kantor Pusat Jl. Ratulangi No. 3 Makassar atau Kantor Wilayah Pelayanan I - IV). Proses pendaftaran hingga pemasangan umumnya memakan waktu 7-14 hari kerja.",
           "tags": [
             "sambungan-baru",
@@ -22,7 +22,7 @@
           ]
         },
         {
-          "question": "Apa saja persyaratan dokumen untuk sambungan baru PDAM?",
+          "question": "Apa saja persyaratan dokumen untuk sambungan baru?",
           "answer": "Persyaratan dokumen untuk sambungan baru meliputi: (1) Fotokopi KTP pemohon/pemilik, (2) Fotokopi Kartu Keluarga (KK), (3) Fotokopi bukti kepemilikan tanah/bangunan (Sertifikat Tanah/SHM, Petok D, atau Letter C), (4) Fotokopi PBB (Pajak Bumi dan Bangunan) tahun terakhir, (5) Denah/sketsa lokasi rumah, (6) Fotokopi rekening air tetangga terdekat (sebagai acuan jaringan pipa), (7) Materai Rp 10.000, (8) Surat kuasa jika pendaftaran diwakilkan.",
           "tags": [
             "sambungan-baru",
@@ -33,23 +33,23 @@
           ]
         },
         {
-          "question": "Berapa estimasi biaya dan lama proses pemasangan sambungan baru?",
-          "answer": "Estimasi biaya sambungan baru standar rumah tangga berkisar antara Rp 1.500.000 hingga Rp 2.500.000 tergantung pada jarak lokasi dari pipa utama jaringan PDAM dan diameter meteran air yang dipasang (umumnya 0.5 inci untuk rumah tangga). Waktu proses 7-14 hari kerja mencakup verifikasi berkas, survei teknis lokasi, penerbitan SPK, pembayaran, hingga instalasi fisik meteran.",
+          "question": "Berapa lama proses pemasangan sambungan baru?",
+          "answer": "Proses pemasangan sambungan baru umumnya memakan waktu 7-14 hari kerja, tergantung pada antrean, kesiapan jaringan pipa di lokasi, dan kelengkapan berkas. Tahapannya meliputi verifikasi berkas, survei teknis lokasi, penetapan biaya pemasangan, pembayaran, penerbitan SPK, hingga instalasi meteran air.",
           "tags": [
             "sambungan-baru",
-            "biaya",
             "waktu",
+            "proses",
             "estimasi",
             "spk"
           ]
         },
         {
-          "question": "Apakah rumah kontrakan atau rumah yang sedang dibangun bisa mendaftar PDAM?",
-          "answer": "Ya, rumah kontrakan atau bangunan yang sedang dalam tahap konstruksi dapat diajukan pemasangan sambungan PDAM selama mendapat persetujuan tertulis dari pemilik tanah/bangunan yang sah dan lokasi pemasangan meteran air terlindung serta aman secara teknis.",
+          "question": "Apakah rumah yang sedang dibangun bisa pasang PDAM?",
+          "answer": "Ya, rumah yang sedang dalam proses pembangunan dapat mengajukan pemasangan sambungan PDAM selama lokasi sudah jelas dan bisa dipastikan meteran air aman serta sesuai standar teknis PDAM.",
           "tags": [
             "sambungan-baru",
-            "kontrakan",
-            "pembangunan"
+            "rumah-baru",
+            "kontrakan"
           ]
         },
         {
@@ -61,112 +61,92 @@
             "mbr",
             "bantuan"
           ]
-        },
-        {
-          "question": "Bagaimana prosedur sambungan air untuk kompleks perumahan/pengembang?",
-          "answer": "Pengembang perumahan (developer) wajib mengajukan permohonan izin prinsip jaringan distribusi air minum utama (JDU/JDK) ke Kantor Pusat PDAM Makassar, dilanjutkan dengan penyusunan Site Plan jaringan pipa, pengujian tekanan pipa (hydrotest), dan pembayaran biaya penyambungan jaringan utama sebelum dilanjutkan pendaftaran meter individual per unit rumah.",
-          "tags": [
-            "sambungan-baru",
-            "developer",
-            "perumahan",
-            "kompleks"
-          ]
         }
       ]
     },
     {
-      "id": "tarif-golongan",
-      "title": "Informasi Tarif Air & Golongan Pelanggan",
+      "id": "tarif",
+      "title": "Informasi Tarif Air",
       "entries": [
         {
-          "question": "Bagaimana sistem perhitungan tarif air progresif PDAM?",
-          "answer": "PDAM Kota Makassar menerapkan tarif progresif berjenjang berdasarkan volume pemakaian air bulanan (m3): Blok I (0-10 m3) menggunakan tarif dasar termurah, Blok II (11-20 m3) tarif sedang, dan Blok III (>20 m3) menggunakan tarif tertinggi. Tujuan sistem progresif ini adalah mendorong efisiensi pemakaian air bersih oleh pelanggan.",
+          "question": "Bagaimana sistem tarif air PDAM?",
+          "answer": "PDAM menggunakan sistem tarif progresif, di mana semakin besar volume air yang digunakan dalam satu bulan, semakin tinggi tarif per meter kubiknya. Selain tarif per meter kubik, tagihan bulanan juga mencakup biaya beban tetap (biaya administrasi) yang jumlahnya tetap setiap bulan terlepas dari volume pemakaian.",
           "tags": [
             "tarif",
             "progresif",
-            "blok-pemakaian",
+            "tagihan",
             "hitung-tagihan"
           ]
         },
         {
-          "question": "Apa saja pembagian golongan pelanggan PDAM Makassar?",
-          "answer": "Golongan pelanggan terbagi dalam 5 kelompok utama: (1) Kelompok I Sosial (Kran Umum, Tempat Ibadah, Panti Asuhan, Sekolah Negeri), (2) Kelompok II Rumah Tangga (Tipe A1, A2, A3, B1, B2 berdasarkan luas bangunan dan daya listrik), (3) Kelompok III Niaga (Kios, Toko, Restoran, Hotel, Kantor Swasta), (4) Kelompok IV Industri (Pabrik, Industri Pengolahan), (5) Kelompok V Khusus (Instansi Pemerintah, TNI/Polri, BUMN/BUMD).",
+          "question": "Apa saja golongan pelanggan PDAM?",
+          "answer": "PDAM membagi pelanggan ke dalam beberapa golongan tarif: (1) Kelompok Sosial - tempat ibadah, panti asuhan, yayasan sosial, sekolah negeri, puskesmas, kran umum, (2) Kelompok Rumah Tangga - dibagi berdasarkan tipe rumah (A1, A2, B1, dll.) berdasarkan luas bangunan dan daya listrik, (3) Kelompok Niaga - bisnis, komersial, pertokoan, (4) Kelompok Instansi Pemerintah/Swasta, (5) Kelompok Industri - industri kecil, menengah, hingga besar. Sistem ini menerapkan subsidi silang di mana golongan sosial mendapat tarif lebih murah.",
           "tags": [
             "tarif",
             "golongan",
+            "pelanggan",
             "sosial",
-            "rumah-tangga",
-            "niaga"
+            "rumah-tangga"
           ]
         },
         {
-          "question": "Berapa biaya beban tetap (administrasi dan pemeliharaan meteran) per bulan?",
-          "answer": "Setiap tagihan bulanan mencakup Biaya Beban Tetap (Administrasi & Pemeliharaan Meter Air) yang besarnya bervariasi sesuai diameter meteran: Meter 0.5 inci sekitar Rp 10.000 - Rp 15.000/bulan, Meter 0.75 inci Rp 20.000 - Rp 30.000/bulan, dan Meter 1 inci ke atas disesuaikan dengan ketentuan tarif golongan.",
+          "question": "Berapa tarif air per meter kubik?",
+          "answer": "Tarif air per meter kubik ditentukan secara berjenjang berdasarkan blok pemakaian bulanan dan golongan pelanggan. Pemakaian Blok I (0-10 m3) dikenakan tarif terendah, Blok II (11-20 m3) tarif sedang, dan Blok III (>20 m3) tarif penuh. Rincian tarif tepat dapat dilihat pada rekening tagihan bulanan atau papan informasi resmi PDAM.",
           "tags": [
             "tarif",
-            "beban-tetap",
-            "biaya-administrasi",
-            "meteran"
+            "meter-kubik",
+            "harga-air",
+            "blok-pemakaian"
           ]
         },
         {
-          "question": "Bagaimana cara mengajukan perubahan golongan tarif?",
-          "answer": "Pelanggan dapat mengajukan permohonan perubahan golongan tarif dengan membawa: (1) Fotokopi KTP & Rekening Air terakhir, (2) Surat permohonan penyesuaian golongan, (3) Bukti pendukung (misal rumah tinggal yang berubah menjadi usaha/niaga atau sebaliknya). Petugas PDAM akan melakukan survei verifikasi ke lokasi sebelum menetapkan persetujuan perubahan golongan.",
+          "question": "Bagaimana cara mengubah golongan tarif?",
+          "answer": "Untuk mengubah golongan tarif, Anda dapat mengunjungi kantor PDAM dengan membawa bukti pendukung seperti data luas bangunan atau bukti perubahan fungsi rumah/bangunan untuk mengajukan perubahan golongan. Petugas akan melakukan verifikasi dan penyesuaian sesuai ketentuan yang berlaku.",
           "tags": [
             "tarif",
-            "perubahan-golongan",
-            "survei",
+            "golongan",
+            "perubahan",
             "penyesuaian"
           ]
         },
         {
-          "question": "Berapa denda keterlambatan pembayaran rekening air PDAM?",
-          "answer": "Batas akhir pembayaran rekening air adalah tanggal 20 setiap bulannya. Keterlambatan pembayaran dikenakan denda bertingkat: Bulan ke-1 terlambat denda Rp 10.000 - Rp 25.000 (sesuai golongan), Bulan ke-2 denda tambahan + peringatan penyegelan, dan jika tidak dilunasi hingga bulan ke-3 akan dilakukan penyegelan/penutupan sementara sambungan air.",
+          "question": "Kenapa tarif PDAM berbeda di setiap daerah?",
+          "answer": "Tarif PDAM berbeda di setiap daerah karena penetapan tarif ditentukan oleh kebijakan masing-masing pemerintah daerah (kota/kabupaten) berdasarkan peraturan kepala daerah. Faktor yang mempengaruhi meliputi biaya operasional, sumber air baku, kondisi geografis, dan panjang jaringan pipa.",
           "tags": [
             "tarif",
-            "denda",
-            "keterlambatan",
-            "jatuh-tempo"
-          ]
-        },
-        {
-          "question": "Berapa biaya pembukaan kembali (re-opening) sambungan yang tersegel?",
-          "answer": "Untuk membuka kembali sambungan air yang disegel akibat menunggak, pelanggan wajib: (1) Melunasi seluruh tunggakan rekening air beserta denda, (2) Membayar Biaya Pembukaan Segel/Pemasangan Kembali sebesar Rp 50.000 - Rp 150.000 tergantung lama penutupan dan tipe meteran.",
-          "tags": [
-            "tarif",
-            "segel",
-            "buka-segel",
-            "penunggakan"
+            "kebijakan",
+            "perbedaan"
           ]
         }
       ]
     },
     {
-      "id": "pengaduan-keluhan",
-      "title": "Prosedur Pengaduan & Keluhan Layanan",
+      "id": "pengaduan",
+      "title": "Prosedur Pengaduan dan Keluhan",
       "entries": [
         {
-          "question": "Air PDAM mati atau tidak mengalir, harus lapor ke mana?",
-          "answer": "Jika suplai air mati/tidak mengalir, Anda dapat segera melapor melalui kanal resmi 24/7 PDAM Makassar: (1) Call Center Pengaduan: 1500411, (2) WhatsApp Pengaduan: 0811-4641-123, (3) Aplikasi PDAM INFO (Menu Pengaduan), atau (4) Langsung via Web Chat CS ini. Sebutkan Nomor Pelanggan, Nama, Alamat Lengkap, dan foto/lokasi kejadian.",
+          "question": "Air saya mati, harus lapor kemana?",
+          "answer": "Jika suplai air mati atau tidak mengalir, Anda dapat segera melapor melalui kanal resmi PDAM Makassar: (1) Call Center Pengaduan: 1500411 (24 Jam), (2) WhatsApp Pengaduan CS: 0811-4641-123, (3) Aplikasi PDAM INFO (Menu Pengaduan), atau (4) Langsung via Web Chat CS ini. Sebutkan Nomor Pelanggan, Nama, dan Alamat Lengkap.",
           "tags": [
             "pengaduan",
             "air-mati",
+            "lapor",
             "call-center",
             "whatsapp"
           ]
         },
         {
-          "question": "Bagaimana cara penanganan jika air PDAM keruh, berbau, atau berwarna?",
-          "answer": "Air keruh/berwarna biasanya terjadi pasca perbaikan pipa jaringan utama atau Flusshing berkala. Langkah awal: Buka kran air terjauh selama 5-10 menit untuk menguras endapan. Jika air tetap keruh/berbau, segera buat laporan pengaduan agar tim teknik PDAM melakukan pengurasan pipa (wash-out) di wilayah Anda.",
+          "question": "Meteran air saya rusak",
+          "answer": "Jika meteran air mengalami kerusakan mekanis, kaca buram, jarum macet, atau kebocoran pada badan meteran, segera laporkan ke PDAM. Penggantian meter air akibat faktor usia/kerusakan alami GRATIS dari PDAM.",
           "tags": [
             "pengaduan",
-            "air-keruh",
-            "air-berbau",
-            "kualitas"
+            "meteran-rusak",
+            "meteran-macet",
+            "kaca-buram"
           ]
         },
         {
-          "question": "Siapa yang bertanggung jawab jika terjadi kebocoran pipa air?",
+          "question": "Siapa yang tanggung jawab jika pipa bocor?",
           "answer": "Tanggung jawab dibedakan berdasarkan lokasi kebocoran: (1) Kebocoran sebelum meteran air (pipa utama/distribusi jalan hingga meteran) adalah TANGGUNG JAWAB PDAM dan diperbaiki gratis, (2) Kebocoran setelah meteran air (persil/dalam rumah pelanggan) adalah TANGGUNG JAWAB PELANGGAN.",
           "tags": [
             "pengaduan",
@@ -176,18 +156,8 @@
           ]
         },
         {
-          "question": "Bagaimana jika meteran air rusak, buram, macet, atau berputar cepat?",
-          "answer": "Jika meteran air mengalami kerusakan mekanis, kaca buram/kabur, jarum macet, atau berputar sendiri tanpa ada kran terbuka, segera laporkan ke PDAM. Penggantian meter air akibat faktor usia/kerusakan alami GRATIS dari PDAM. Jika meteran rusak akibat kesengajaan atau kelalaian pelanggan (terbentur/tertimbun), biaya penggantian ditanggung pelanggan.",
-          "tags": [
-            "pengaduan",
-            "meteran-rusak",
-            "meteran-macet",
-            "kaca-buram"
-          ]
-        },
-        {
-          "question": "Mengapa tagihan air tiba-tiba membengkak/naik tidak wajar?",
-          "answer": "Tagihan membengkak umumnya disebabkan oleh: (1) Kebocoran tersembunyi pada instalasi pipa dalam rumah (bawah lantai/dinding/toilet), (2) Kesalahan pembacaan angka meteran oleh petugas, (3) Pemakaian air meningkat signifikan. Cara cek: Matikan semua kran air rumah, lalu amati jarum meteran air. Jika jarum kecil tetap berputar, dipastikan ada kebocoran instalasi dalam rumah.",
+          "question": "Tagihan saya membengkak tidak wajar",
+          "answer": "Tagihan membengkak umumnya disebabkan oleh kebocoran tersembunyi pada instalasi pipa dalam rumah (bawah lantai/dinding/toilet) atau kesalahan pencatatan angka meter. Cara cek: Matikan semua kran air rumah, lalu amati jarum meteran air. Jika jarum kecil tetap berputar, dipastikan ada kebocoran instalasi dalam rumah.",
           "tags": [
             "pengaduan",
             "tagihan-membengkak",
@@ -196,34 +166,24 @@
           ]
         },
         {
-          "question": "Berapa lama estimasi penanganan pengaduan oleh tim teknis PDAM?",
-          "answer": "Estimasi waktu penanganan laporan pengaduan: (1) Pengaduan darurat (pipa induk bocor besar/kebocoran jalan): 2-6 jam, (2) Air mati wilayah/persil: 6-24 jam, (3) Air keruh/pengurasan pipa: 12-24 jam, (4) Perbaikan/penggantian meteran rusak: 1-3 hari kerja.",
+          "question": "Bagaimana penanganan air keruh atau berbau?",
+          "answer": "Air keruh/berwarna biasanya terjadi pasca perbaikan pipa jaringan utama. Buka kran air terjauh selama 5-10 menit untuk menguras endapan. Jika air tetap keruh, segera buat laporan pengaduan agar tim teknik PDAM melakukan pengurasan pipa (wash-out) di wilayah Anda.",
           "tags": [
             "pengaduan",
-            "estimasi-waktu",
-            "penanganan",
-            "respon-teknis"
-          ]
-        },
-        {
-          "question": "Bagaimana jika air di rumah saya tekanannya sangat kecil/lemah?",
-          "answer": "Tekanan air kecil bisa disebabkan oleh penyumbatan pada saringan meteran air (kotoran/kerak), elevasi bangunan tinggi, atau tekanan sistem jaringan yang sedang menurun di wilayah tersebut. Laporkan ke CS agar petugas teknik melakukan pembersihan saringan meteran (strainer) dan pengukuran tekanan air (manometer).",
-          "tags": [
-            "pengaduan",
-            "air-kecil",
-            "tekanan-rendah",
-            "saringan-meteran"
+            "air-keruh",
+            "air-berbau",
+            "kualitas"
           ]
         }
       ]
     },
     {
       "id": "tanki-jene",
-      "title": "Layanan Mobil Tangki Air (Tanki Jene')",
+      "title": "Layanan Mobil Tangki Air (Tanki Jene)",
       "entries": [
         {
-          "question": "Apa itu layanan mobil tangki air Tanki Jene' PDAM Makassar?",
-          "answer": "Tanki Jene' adalah layanan antar bantuan suplai air bersih menggunakan armada mobil tangki resmi Perumda Air Minum Kota Makassar untuk melayani pelanggan yang mengalami gangguan pasokan air, krisis air darurat, maupun kebutuhan acara khusus.",
+          "question": "Apa itu Tanki Jene?",
+          "answer": "Tanki Jene adalah layanan suplai bantuan air bersih menggunakan armada mobil tangki resmi Perumda Air Minum Kota Makassar untuk melayani pelanggan yang mengalami gangguan pasokan air, krisis air darurat, maupun kebutuhan acara khusus.",
           "tags": [
             "tanki-jene",
             "mobil-tangki",
@@ -232,166 +192,92 @@
           ]
         },
         {
-          "question": "Bagaimana cara mengajukan permintaan mobil tangki air (Tanki Jene')?",
-          "answer": "Permintaan mobil tangki air dapat diajukan secara online melalui portal resmi tangki.pdammakassar.co.id, via aplikasi PDAM INFO, Call Center 1500411, WhatsApp 0811-4641-123, atau via Web Chat ini. Cukup masukkan Nomor Pelanggan 9 digit, Nomor HP, Email, dan Alamat Pengantaran.",
+          "question": "Cara request tangki air",
+          "answer": "Permintaan mobil tangki air dapat diajukan secara online melalui portal resmi tangki.pdammakassar.co.id, via aplikasi PDAM INFO, Call Center 1500411, WhatsApp 0811-4641-123, atau via Web Chat ini. Cukup masukkan Nomor Pelanggan 9 digit, Nomor HP, dan Alamat Pengantaran.",
           "tags": [
             "tanki-jene",
-            "cara-pesan",
+            "request-tangki",
             "pengajuan-online",
             "nomor-pelanggan"
           ]
         },
         {
-          "question": "Berapa biaya layanan mobil tangki air Tanki Jene'?",
-          "answer": "Pengajuan tangki air GRATIS (bebas biaya pengajuan) bagi pelanggan PDAM yang terkena dampak gangguan air mati resmi PDAM. Untuk kebutuhan komersial, acara swasta, atau non-pelanggan, dikenakan tarif resmi per tangki (kapasitas 4.000 Liter / 5.000 Liter) berdasarkan zonasi jarak pengantaran dari tempat pengisian air.",
+          "question": "Berapa biaya layanan mobil tangki air?",
+          "answer": "Pengajuan tangki air GRATIS bagi pelanggan PDAM yang terkena dampak gangguan air mati resmi PDAM. Untuk kebutuhan komersial, acara swasta, atau non-pelanggan, dikenakan tarif resmi per tangki (kapasitas 4.000 Liter / 5.000 Liter).",
           "tags": [
             "tanki-jene",
-            "biaya-tangki",
+            "biaya",
             "gratis",
             "kapasitas-4000L"
-          ]
-        },
-        {
-          "question": "Bagaimana cara melacak antrean dan status pengantaran mobil tangki air?",
-          "answer": "Setelah mengajukan permintaan, Anda akan menerima Kode Tiket/Nomor Permintaan via SMS/Email. Gunakan kode tersebut di fitur 'Lacak Permintaan' pada portal tangki.pdammakassar.co.id untuk memantau posisi antrean armada tangki secara real-time.",
-          "tags": [
-            "tanki-jene",
-            "lacak-antrean",
-            "status-pengantaran",
-            "kode-tiket"
-          ]
-        },
-        {
-          "question": "Berapa kapasitas satu armada mobil tangki air PDAM?",
-          "answer": "Armada mobil tangki PDAM Makassar memiliki kapasitas standar 4.000 Liter (4 m3) dan 5.000 Liter (5 m3) air bersih yang telah memenuhi standar higienis dan kesehatan untuk kebutuhan domestik rumah tangga.",
-          "tags": [
-            "tanki-jene",
-            "kapasitas",
-            "liter",
-            "volume-air"
           ]
         }
       ]
     },
     {
-      "id": "pembayaran-digital",
-      "title": "Pembayaran Tagihan & Layanan Digital",
+      "id": "pembayaran",
+      "title": "Pembayaran Tagihan",
       "entries": [
         {
-          "question": "Bagaimana cara mengecek jumlah tagihan air PDAM online?",
-          "answer": "Cek tagihan air PDAM Makassar dapat dilakukan melalui: (1) Aplikasi PDAM INFO (Android/iOS), (2) Website resmi pdammks.co.id, (3) Aplikasi e-wallet (Dana, OVO, GoPay, ShopeePay, Tokopedia, Blibli), (4) Mobile Banking bank mitra (Mandiri, BRI, BCA, BNI, Bank Sulselbar), atau (5) Menanyakan langsung ke Web Chat CS ini dengan memberikan Nomor Pelanggan.",
+          "question": "Cara bayar tagihan PDAM online",
+          "answer": "Cara bayar tagihan PDAM online dapat dilakukan melalui Mobile Banking (Mandiri, BRI, BCA, BNI, Bank Sulselbar), Minimarket (Indomaret, Alfamart), E-Wallet & E-Commerce (Tokopedia, Shopee, Dana, OVO, GoPay), atau aplikasi PDAM INFO.",
           "tags": [
             "pembayaran",
-            "cek-tagihan",
-            "online",
-            "aplikasi"
-          ]
-        },
-        {
-          "question": "Kanal dan metode apa saja yang menerima pembayaran tagihan PDAM?",
-          "answer": "Pembayaran tagihan air dapat dilakukan melalui: (1) ATM & Mobile/Internet Banking (Mandiri, BRI, BCA, BNI, BTN, Bank Sulselbar), (2) Minimarket (Indomaret, Alfamart, Alfamidi), (3) E-Commerce & E-Wallet (Tokopedia, Shopee, GoTagihan, Dana, OVO, LinkAja), (4) Kantor Pos & PPOB terdekat, (5) Loket Pembayaran Kantor Pusat & Wilayah PDAM Makassar.",
-          "tags": [
-            "pembayaran",
-            "metode-bayar",
+            "bayar-online",
             "indomaret",
             "banking",
             "ewallet"
           ]
         },
         {
-          "question": "Bagaimana jika sudah membayar tetapi tagihan masih muncul/terbaca menunggak?",
-          "answer": "Jika terjadi kendala sinkronisasi data pembayaran, simpan Struk/Bukti Transfer resmi pembayaran Anda. Kirimkan foto bukti bayar beserta ID Pelanggan via WhatsApp Pengaduan 0811-4641-123 atau Live Chat CS ini untuk dilakukan verifikasi dan Rekonsiliasi Data Keuangan oleh petugas.",
+          "question": "Bagaimana cara cek tagihan PDAM online?",
+          "answer": "Cek tagihan air PDAM Makassar dapat dilakukan melalui aplikasi PDAM INFO, website resmi pdammks.co.id, e-commerce/e-wallet, atau menanyakan langsung ke Web Chat CS ini dengan memasukkan Nomor Pelanggan 9 digit Anda.",
           "tags": [
             "pembayaran",
-            "kendala-bayar",
-            "bukti-transfer",
-            "rekonsiliasi"
-          ]
-        },
-        {
-          "question": "Apa saja fitur utama pada aplikasi mobile PDAM INFO?",
-          "answer": "Aplikasi PDAM INFO memiliki fitur: (1) Cek & Histori Pemakaian Air Bulanan, (2) Pembayaran Tagihan Online via QRIS/E-Wallet, (3) Laporan Pengaduan Gangguan (dengan lampiran foto & GPS lokasi), (4) Simulasi Perhitungan Tarif Air, (5) Pendaftaran Sambungan Baru, (6) Notifikasi Informasi Pemeliharaan/Perbaikan Pipa.",
-          "tags": [
-            "pembayaran",
-            "pdam-info",
-            "aplikasi-mobile",
-            "fitur"
+            "cek-tagihan",
+            "online",
+            "aplikasi"
           ]
         }
       ]
     },
     {
-      "id": "kualitas-standar-air",
-      "title": "Kualitas & Standar Kesehatan Air Minum",
+      "id": "informasi-umum",
+      "title": "Informasi Umum PDAM",
       "entries": [
         {
-          "question": "Apakah air PDAM Makassar aman untuk dikonsumsi dan dimasak?",
-          "answer": "Air bersih yang diproduksi oleh IPA (Instalasi Pengolahan Air) PDAM Makassar diolah memenuhi standar kesehatan Peraturan Menteri Kesehatan (Permenkes) No. 2 Tahun 2023 tentang Standar Kualitas Air Minum. Untuk konsumsi langsung, disarankan tetap memasak air hingga mendidih (100°C) guna mengeliminasi potensi kuman saat pengaliran pipa rumah tangga.",
+          "question": "Di mana lokasi kantor pusat PDAM Makassar?",
+          "answer": "Kantor Pusat Perumda Air Minum Kota Makassar berlokasi di Jl. Dr. Ratulangi No. 3, Kota Makassar. Telepon: 0411-876777. Jam operasional loket kantor: Senin - Jumat (07.30 - 15.30 WITA), Sabtu (08.00 - 12.00 WITA).",
+          "tags": [
+            "informasi-umum",
+            "alamat",
+            "kantor-pusat",
+            "ratulangi"
+          ]
+        },
+        {
+          "question": "Berapa nomor Call Center dan WhatsApp PDAM Makassar?",
+          "answer": "Call Center Pengaduan PDAM Makassar: 1500411 (24 Jam). WhatsApp Pengaduan CS: 0811-4641-123 (24 Jam).",
+          "tags": [
+            "informasi-umum",
+            "call-center",
+            "whatsapp",
+            "1500411"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kualitas-air",
+      "title": "Kualitas dan Standar Air",
+      "entries": [
+        {
+          "question": "Apakah air PDAM aman untuk dimasak dan diminum?",
+          "answer": "Ya, air bersih diproduksi memenuhi standar kesehatan Permenkes No. 2 Tahun 2023. Untuk konsumsi langsung, disarankan tetap memasak air hingga mendidih (100°C).",
           "tags": [
             "kualitas-air",
             "permenkes",
             "konsumsi",
             "layak-minum"
-          ]
-        },
-        {
-          "question": "Bagaimana proses pengolahan air bersih di Instalasi Pengolahan Air (IPA) PDAM?",
-          "answer": "Proses pengolahan air baku menjadi air bersih meliputi 5 tahap utama: (1) Koagulasi (Pencampuran tawas/PAC untuk mengikat lumpur), (2) Flokulasi (Pembentukan gumpalan kotoran), (3) Sedimentasi (Pengendapan lumpur di kolam pengendap), (4) Filtrasi (Penyaringan melalui pasir kuarsa dan karbon aktif), (5) Desinfeksi/Klorinasi (Pemberian gas klorin/kaporit untuk membunuh kuman dan mikroorganisme).",
-          "tags": [
-            "kualitas-air",
-            "pengolahan-air",
-            "ipa",
-            "klorinasi",
-            "filtrasi"
-          ]
-        },
-        {
-          "question": "Berapa parameter standar kekeruhan (turbidity) dan pH air PDAM?",
-          "answer": "Sesuai standar Permenkes: Parameter Kekeruhan (Turbidity) air PDAM dijaga maksimal di bawah 3-5 NTU (sangat jernih), pH air berkisar netral antara 6.5 hingga 8.5, dan sisa klor terlarut di saringan akhir dijaga 0.2 - 0.5 mg/L untuk menjamin sterilitas air di jaringan pipa.",
-          "tags": [
-            "kualitas-air",
-            "ph-air",
-            "turbidity",
-            "ntu",
-            "parameter"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "profil-wilayah-kontak",
-      "title": "Profil, Lokasi Wilayah Pelayanan & Kontak CS",
-      "entries": [
-        {
-          "question": "Di mana lokasi kantor pusat dan kantor wilayah pelayanan PDAM Makassar?",
-          "answer": "Lokasi Kantor Perumda Air Minum Kota Makassar: (1) Kantor Pusat: Jl. Dr. Ratulangi No. 3 Makassar (Telp: 0411-876777), (2) Wilayah Pelayanan I (Makassar Barat/Utara): Jl. Banda No. 20, (3) Wilayah Pelayanan II (Makassar Timur): Jl. Tamalanrea Raya (KIMA), (4) Wilayah Pelayanan III (Makassar Selatan): Jl. Alauddin No. 105, (5) Wilayah Pelayanan IV (Panakkukang/Manggala): Jl. Toddopuli Raya.",
-          "tags": [
-            "kontak",
-            "alamat",
-            "kantor-pusat",
-            "wilayah-pelayanan",
-            "ratulangi"
-          ]
-        },
-        {
-          "question": "Berapa nomor Call Center, WhatsApp, dan jam operasional CS PDAM Makassar?",
-          "answer": "Kanal Resmi Customer Service PDAM Makassar: (1) Call Center Pengaduan: 1500411 (24 Jam), (2) WhatsApp Pengaduan CS: 0811-4641-123 (24 Jam), (3) Jam Operasional Loket Pembayaran Kantor: Senin - Jumat (07.30 - 15.30 WITA), Sabtu (08.00 - 12.00 WITA), (4) Website Resmi: pdammks.co.id, (5) Portal Tangki Air: tangki.pdammakassar.co.id.",
-          "tags": [
-            "kontak",
-            "call-center",
-            "whatsapp",
-            "jam-operasional",
-            "1500411"
-          ]
-        },
-        {
-          "question": "Siapa jajaran Direksi dan Manajemen Perumda Air Minum Kota Makassar?",
-          "answer": "Perumda Air Minum Kota Makassar dipimpin oleh jajaran Direksi utama di bawah pembinaan Pemerintah Kota Makassar, bertugas mengelola pelayanan produksi air minum Instalasi Pengolahan Air (IPA I Ratulangi, IPA II Panaikang, IPA III Antang, IPA IV Maccini Sombala, IPA V Somba Opu) serta jaringan distribusi air se-Kota Makassar.",
-          "tags": [
-            "profil",
-            "direksi",
-            "pdam-makassar",
-            "ipa-panaikang"
           ]
         }
       ]
