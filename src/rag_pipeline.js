@@ -1,3 +1,4 @@
+import { existsSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { SimpleVectorStore } from "./vector_store.js";
@@ -6,7 +7,20 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const INDEX_PATH = join(__dirname, "..", "knowledge_base", "vector_index.json");
+
+function getIndexPath() {
+  const candidates = [
+    join(__dirname, "..", "knowledge_base", "vector_index.json"),
+    join(process.cwd(), "knowledge_base", "vector_index.json"),
+    join(process.cwd(), "rag-pdam", "knowledge_base", "vector_index.json"),
+  ];
+  for (const path of candidates) {
+    if (existsSync(path)) return path;
+  }
+  return candidates[0];
+}
+
+const INDEX_PATH = getIndexPath();
 
 const SYSTEM_PROMPT = `Kamu adalah asisten virtual Customer Service PDAM Kota Makassar (Tanki Jene).
 
@@ -55,7 +69,6 @@ export class RAGPipeline {
       `[RAG] Vector store loaded: ${this.store.documents.length} dokumen`,
     );
 
-    // Setup LLM (Gemini) - dynamic import untuk menghindari error jika tidak terpakai
     const apiKey = process.env.GOOGLE_API_KEY;
     if (!apiKey || apiKey === "your_gemini_api_key_here") {
       console.warn(
