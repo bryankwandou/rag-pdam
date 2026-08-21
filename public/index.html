@@ -390,7 +390,7 @@
   <div id="app">
     <header class="chat-header">
       <div class="header-logo">
-        <img src="/images/logo/pdam-makassar.png" alt="PDAM Kota Makassar">
+        <img src="/pdam-makassar.png" onerror="this.src='/logo.svg'" alt="PDAM Kota Makassar" width="38" height="38">
       </div>
       <div class="header-info">
         <div class="header-title">PDAM Kota Makassar</div>
@@ -412,7 +412,7 @@
     <div class="chat-messages" id="chatMessages">
       <div class="welcome-screen" id="welcomeScreen">
         <div class="welcome-logo">
-          <img src="/images/logo/pdam-makassar.png" alt="PDAM Kota Makassar">
+          <img src="/pdam-makassar.png" onerror="this.src='/logo.svg'" alt="PDAM Kota Makassar">
         </div>
         <div class="welcome-subtitle">Perumda Air Minum</div>
         <h1 class="welcome-title">Ada yang bisa kami bantu?</h1>
@@ -645,7 +645,7 @@
 
       var avatarHtml = "";
       if (role === "bot") {
-        avatarHtml = '<div class="msg-avatar"><img src="/images/logo/pdam-makassar.png" alt="PDAM" width="36" height="36"></div>';
+        avatarHtml = '<div class="msg-avatar"><img src="/pdam-makassar.png" onerror="this.src=\'/logo.svg\'" alt="PDAM" width="36" height="36"></div>';
       }
 
       var displayText = text;
@@ -675,7 +675,7 @@
     function appendTyping() {
       var wrapper = document.createElement("div");
       wrapper.className = "message bot";
-      wrapper.innerHTML = '<div class="msg-avatar"><img src="/images/logo/pdam-makassar.png" alt="PDAM" width="36" height="36"></div>' +
+      wrapper.innerHTML = '<div class="msg-avatar"><img src="/pdam-makassar.png" onerror="this.src=\'/logo.svg\'" alt="PDAM" width="36" height="36"></div>' +
         '<div class="msg-content"><div class="typing-indicator"><span></span><span></span><span></span></div></div>';
       chatMessages.appendChild(wrapper);
       chatMessages.scrollTop = chatMessages.scrollHeight;
