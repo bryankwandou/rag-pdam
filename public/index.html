@@ -2,7 +2,7 @@
 <html lang="id" data-theme="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>CS PDAM Kota Makassar - Asisten Virtual</title>
   <meta name="description" content="Asisten Virtual Customer Service PDAM Kota Makassar. Tanyakan tentang tarif, pengaduan, sambungan baru, dan layanan tangki air.">
   <link rel="icon" href="/favicon.ico">
@@ -75,10 +75,13 @@
 
     html, body {
       height: 100%;
+      height: 100dvh;
+      width: 100%;
       font-family: var(--font-family);
       background: var(--color-background);
       color: var(--color-on-surface);
       -webkit-font-smoothing: antialiased;
+      overflow: hidden;
     }
 
     body::before {
@@ -92,45 +95,52 @@
       z-index: 0;
     }
 
+    /* ───── Flexible Layout ───── */
     #app {
       position: relative;
       z-index: 1;
       display: flex;
       flex-direction: column;
-      height: 100vh;
-      max-width: 860px;
+      height: 100%;
+      height: 100dvh;
+      width: 100%;
+      max-width: 900px;
       margin: 0 auto;
+      box-shadow: var(--shadow-elevated);
+      background: var(--color-background);
     }
 
+    /* ───── Header ───── */
     .chat-header {
       display: flex;
       align-items: center;
       gap: 14px;
-      padding: 14px 24px;
+      padding: 12px 20px;
       background: var(--color-surface);
       border-bottom: 1px solid var(--color-border);
       flex-shrink: 0;
+      z-index: 10;
     }
 
     .header-logo {
-      width: 44px; height: 44px; border-radius: 10px;
+      width: 42px; height: 42px; border-radius: 10px;
       overflow: hidden; flex-shrink: 0; background: #fff;
       display: flex; align-items: center; justify-content: center;
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
 
-    .header-logo img { width: 40px; height: 40px; object-fit: contain; }
-    .header-info { flex: 1; }
-    .header-title { font-size: 15px; font-weight: 700; line-height: 1.3; letter-spacing: -0.01em; }
-    .header-subtitle { font-size: 12px; color: var(--color-on-surface-muted); display: flex; align-items: center; gap: 6px; margin-top: 1px; }
-    .status-dot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; display: inline-block; animation: statusPulse 2s infinite; }
+    .header-logo img { width: 38px; height: 38px; object-fit: contain; }
+    .header-info { flex: 1; min-width: 0; }
+    .header-title { font-size: 15px; font-weight: 700; line-height: 1.3; letter-spacing: -0.01em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .header-subtitle { font-size: 12px; color: var(--color-on-surface-muted); display: flex; align-items: center; gap: 6px; margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .status-dot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; display: inline-block; flex-shrink: 0; animation: statusPulse 2s infinite; }
 
     @keyframes statusPulse {
       0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
       50% { box-shadow: 0 0 0 4px rgba(34, 197, 94, 0); }
     }
 
-    .header-actions { display: flex; gap: 4px; }
+    .header-actions { display: flex; gap: 4px; flex-shrink: 0; }
     .icon-btn {
       width: 36px; height: 36px; border-radius: 8px; border: none;
       background: transparent; color: var(--color-on-surface-muted);
@@ -140,9 +150,16 @@
     .icon-btn:hover { background: var(--color-surface-hover); color: var(--color-on-surface); }
     .icon-btn .material-icons-round { font-size: 20px; }
 
+    /* ───── Chat Area (Flexible & Auto-scroll) ───── */
     .chat-messages {
-      flex: 1; overflow-y: auto; padding: 24px 24px 12px;
-      display: flex; flex-direction: column; gap: 18px; scroll-behavior: smooth;
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 20px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      scroll-behavior: smooth;
+      min-height: 0;
     }
 
     .chat-messages::-webkit-scrollbar { width: 5px; }
@@ -151,12 +168,12 @@
     .chat-messages::-webkit-scrollbar-thumb:hover { background: var(--color-scrollbar-hover); }
 
     .message {
-      display: flex; gap: 10px; max-width: 82%;
-      animation: msgFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex; gap: 10px; max-width: 85%;
+      animation: msgFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     @keyframes msgFadeIn {
-      from { opacity: 0; transform: translateY(10px); }
+      from { opacity: 0; transform: translateY(8px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
@@ -164,7 +181,7 @@
     .message.bot { align-self: flex-start; }
 
     .msg-avatar {
-      width: 30px; height: 30px; border-radius: 8px; flex-shrink: 0;
+      width: 32px; height: 32px; border-radius: 8px; flex-shrink: 0;
       overflow: hidden; margin-top: 2px; background: #fff;
       box-shadow: 0 1px 4px rgba(0,0,0,0.08);
     }
@@ -174,6 +191,7 @@
     .msg-content {
       padding: 12px 16px; border-radius: 16px; font-size: 14px;
       line-height: 1.65; white-space: pre-wrap; word-break: break-word;
+      position: relative;
     }
 
     .message.user .msg-content {
@@ -188,6 +206,29 @@
       border: 1px solid var(--color-border);
       white-space: normal;
     }
+
+    .msg-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .tts-btn {
+      background: transparent;
+      border: none;
+      color: var(--color-on-surface-muted);
+      cursor: pointer;
+      padding: 2px 6px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      transition: background 0.15s, color 0.15s;
+    }
+    .tts-btn:hover { background: var(--color-tag-bg); color: var(--color-primary); }
+    .tts-btn .material-icons-round { font-size: 16px; }
 
     .msg-sources {
       margin-top: 10px; padding-top: 10px;
@@ -224,13 +265,14 @@
       30% { transform: translateY(-7px); opacity: 1; }
     }
 
+    /* ───── Quick Actions Bar ───── */
     .quick-actions {
-      padding: 0 24px 10px; display: flex; gap: 8px;
-      flex-wrap: wrap; flex-shrink: 0;
+      padding: 6px 20px 10px; display: flex; gap: 8px;
+      flex-wrap: wrap; flex-shrink: 0; z-index: 5;
     }
 
     .quick-btn {
-      padding: 7px 14px; border: 1px solid var(--color-border); border-radius: 20px;
+      padding: 6px 12px; border: 1px solid var(--color-border); border-radius: 20px;
       background: var(--color-surface); color: var(--color-on-surface-muted);
       font-family: var(--font-family); font-size: 12px; font-weight: 500;
       cursor: pointer; transition: all 0.15s; white-space: nowrap;
@@ -240,15 +282,19 @@
       background: var(--color-primary-glow);
     }
 
+    /* ───── Flexible Chat Input Area (No Redundant Footer) ───── */
     .chat-input-area {
-      padding: 12px 24px 20px; background: var(--color-surface);
-      border-top: 1px solid var(--color-border); flex-shrink: 0;
+      padding: 10px 20px 16px;
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-border);
+      flex-shrink: 0;
+      z-index: 10;
     }
 
     .input-wrapper {
-      display: flex; align-items: flex-end; gap: 10px;
+      display: flex; align-items: flex-end; gap: 8px;
       background: var(--color-input-bg); border: 1px solid var(--color-border);
-      border-radius: 14px; padding: 6px 6px 6px 16px;
+      border-radius: 14px; padding: 6px 8px 6px 14px;
       transition: border-color 0.2s, box-shadow 0.2s;
     }
     .input-wrapper:focus-within {
@@ -259,50 +305,63 @@
     #chatInput {
       flex: 1; border: none; outline: none; background: transparent;
       color: var(--color-on-surface); font-family: var(--font-family);
-      font-size: 14px; line-height: 1.5; resize: none; max-height: 120px; padding: 8px 0;
+      font-size: 14px; line-height: 1.5; resize: none; max-height: 110px; padding: 8px 0;
     }
     #chatInput::placeholder { color: var(--color-on-surface-muted); }
 
-    #sendBtn {
-      width: 40px; height: 40px; border-radius: 10px; border: none;
-      background: var(--color-primary); color: #fff; cursor: pointer;
+    /* Voice Recording & Send Buttons */
+    .btn-action {
+      width: 38px; height: 38px; border-radius: 10px; border: none;
+      background: transparent; color: var(--color-on-surface-muted); cursor: pointer;
       display: flex; align-items: center; justify-content: center;
-      transition: opacity 0.15s, transform 0.1s; flex-shrink: 0;
+      transition: all 0.15s; flex-shrink: 0;
+    }
+    .btn-action:hover { background: var(--color-surface-hover); color: var(--color-primary); }
+    
+    #micBtn.recording {
+      background: #ef4444 !important;
+      color: #ffffff !important;
+      animation: micPulse 1.2s infinite ease-in-out;
+    }
+
+    @keyframes micPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+      50% { box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
+    }
+
+    #sendBtn {
+      background: var(--color-primary); color: #fff;
     }
     #sendBtn:hover { opacity: 0.9; }
     #sendBtn:active { transform: scale(0.95); }
     #sendBtn:disabled { opacity: 0.35; cursor: not-allowed; }
-    #sendBtn .material-icons-round { font-size: 20px; }
+    .btn-action .material-icons-round { font-size: 20px; }
 
-    .input-footer {
-      display: flex; justify-content: space-between; align-items: center;
-      padding-top: 8px; font-size: 11px; color: var(--color-on-surface-muted);
-    }
-
+    /* ───── Welcome Screen ───── */
     .welcome-screen {
       flex: 1; display: flex; flex-direction: column; align-items: center;
-      justify-content: center; padding: 40px 24px; text-align: center;
-      gap: 16px; background: var(--color-welcome-gradient); border-radius: 20px;
+      justify-content: center; padding: 30px 20px; text-align: center;
+      gap: 14px; background: var(--color-welcome-gradient); border-radius: 20px;
     }
 
     .welcome-logo {
-      width: 80px; height: 80px; border-radius: 20px; overflow: hidden;
-      background: #fff; box-shadow: 0 8px 32px rgba(26, 124, 192, 0.18);
+      width: 76px; height: 76px; border-radius: 18px; overflow: hidden;
+      background: #fff; box-shadow: 0 8px 28px rgba(26, 124, 192, 0.18);
       display: flex; align-items: center; justify-content: center;
     }
-    .welcome-logo img { width: 72px; height: 72px; object-fit: contain; }
+    .welcome-logo img { width: 68px; height: 68px; object-fit: contain; }
 
     .welcome-title { font-size: 20px; font-weight: 800; letter-spacing: -0.02em; }
-    .welcome-subtitle { font-size: 13px; font-weight: 600; color: var(--color-primary); letter-spacing: 0.02em; text-transform: uppercase; }
-    .welcome-desc { font-size: 14px; color: var(--color-on-surface-muted); max-width: 420px; line-height: 1.6; }
+    .welcome-subtitle { font-size: 12px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; }
+    .welcome-desc { font-size: 14px; color: var(--color-on-surface-muted); max-width: 440px; line-height: 1.5; }
 
     .welcome-grid {
       display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
-      width: 100%; max-width: 460px; margin-top: 8px;
+      width: 100%; max-width: 480px; margin-top: 6px;
     }
 
     .welcome-card {
-      padding: 14px 16px; background: var(--color-surface);
+      padding: 12px 14px; background: var(--color-surface);
       border: 1px solid var(--color-border); border-radius: 12px;
       text-align: left; cursor: pointer;
       transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -313,20 +372,25 @@
     }
     .welcome-card-icon {
       display: flex; align-items: center; gap: 6px;
-      font-size: 13px; margin-bottom: 6px; color: var(--color-primary); font-weight: 700;
+      font-size: 13px; margin-bottom: 4px; color: var(--color-primary); font-weight: 700;
     }
     .welcome-card-icon .material-icons-round { font-size: 16px; }
-    .welcome-card-text { font-size: 12px; color: var(--color-on-surface-muted); line-height: 1.4; }
+    .welcome-card-text { font-size: 11px; color: var(--color-on-surface-muted); line-height: 1.4; }
 
+    /* ───── Responsive Mobile Adjustments ───── */
     @media (max-width: 600px) {
-      .chat-header { padding: 12px 16px; }
-      .chat-messages { padding: 16px 16px 8px; }
-      .quick-actions { padding: 0 16px 8px; }
-      .chat-input-area { padding: 10px 16px 16px; }
-      .message { max-width: 92%; }
+      .chat-header { padding: 10px 14px; gap: 10px; }
+      .header-logo { width: 36px; height: 36px; }
+      .header-logo img { width: 32px; height: 32px; }
+      .header-title { font-size: 14px; }
+      .chat-messages { padding: 14px 14px 8px; gap: 12px; }
+      .quick-actions { padding: 4px 14px 8px; gap: 6px; }
+      .chat-input-area { padding: 8px 12px 12px; }
+      .message { max-width: 90%; }
       .welcome-grid { grid-template-columns: 1fr; }
-      .welcome-logo { width: 64px; height: 64px; }
-      .welcome-logo img { width: 56px; height: 56px; }
+      .welcome-logo { width: 60px; height: 60px; }
+      .welcome-logo img { width: 52px; height: 52px; }
+      .welcome-title { font-size: 18px; }
     }
   </style>
 </head>
@@ -334,7 +398,7 @@
   <div id="app">
     <header class="chat-header">
       <div class="header-logo">
-        <img src="/pdam-makassar.png" alt="PDAM Kota Makassar" width="40" height="40">
+        <img src="/pdam-makassar.png" alt="PDAM Kota Makassar" width="38" height="38">
       </div>
       <div class="header-info">
         <div class="header-title">PDAM Kota Makassar</div>
@@ -406,14 +470,13 @@
 
     <div class="chat-input-area">
       <div class="input-wrapper">
-        <textarea id="chatInput" rows="1" placeholder="Ketik pertanyaan Anda..." autocomplete="off"></textarea>
-        <button id="sendBtn" title="Kirim">
+        <textarea id="chatInput" rows="1" placeholder="Ketik atau gunakan suara..." autocomplete="off"></textarea>
+        <button class="btn-action" id="micBtn" title="Bicara (Voice Input)">
+          <span class="material-icons-round">mic</span>
+        </button>
+        <button class="btn-action" id="sendBtn" title="Kirim">
           <span class="material-icons-round">send</span>
         </button>
-      </div>
-      <div class="input-footer">
-        <span>RAG-powered Customer Service</span>
-        <span>Enter untuk kirim</span>
       </div>
     </div>
   </div>
@@ -423,11 +486,12 @@
     const chatMessages = document.getElementById("chatMessages");
     const chatInput = document.getElementById("chatInput");
     const sendBtn = document.getElementById("sendBtn");
+    const micBtn = document.getElementById("micBtn");
     const welcomeScreen = document.getElementById("welcomeScreen");
     const quickActions = document.getElementById("quickActions");
     let isProcessing = false;
 
-    // Theme
+    // ── Theme Management ──
     const savedTheme = localStorage.getItem("pdam-theme");
     if (savedTheme) {
       document.documentElement.setAttribute("data-theme", savedTheme);
@@ -447,21 +511,22 @@
       icon.textContent = theme === "dark" ? "light_mode" : "dark_mode";
     }
 
-    // Clear
+    // ── Clear Chat ──
     document.getElementById("clearChat").addEventListener("click", function() {
       var msgs = chatMessages.querySelectorAll(".message");
       msgs.forEach(function(m) { m.remove(); });
       welcomeScreen.style.display = "flex";
       quickActions.style.display = "none";
+      if (window.speechSynthesis) window.speechSynthesis.cancel();
     });
 
-    // Auto-resize
+    // ── Auto-resize Textarea ──
     chatInput.addEventListener("input", function() {
       chatInput.style.height = "auto";
-      chatInput.style.height = Math.min(chatInput.scrollHeight, 120) + "px";
+      chatInput.style.height = Math.min(chatInput.scrollHeight, 110) + "px";
     });
 
-    // Enter to send
+    // ── Keyboard Send (Enter) ──
     chatInput.addEventListener("keydown", function(e) {
       if (e.key === "Enter" && !e.shiftKey) {
         e.preventDefault();
@@ -482,6 +547,87 @@
       sendMessage(text);
     }
 
+    // ── Voice Input (Speech Recognition) ──
+    let recognition = null;
+    let isRecording = false;
+
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    if (SpeechRecognition) {
+      recognition = new SpeechRecognition();
+      recognition.continuous = false;
+      recognition.interimResults = true;
+      recognition.lang = 'id-ID';
+
+      recognition.onstart = function() {
+        isRecording = true;
+        micBtn.classList.add("recording");
+        micBtn.title = "Mendengarkan... Klik untuk berhenti";
+        chatInput.placeholder = "Mendengarkan suara Anda...";
+      };
+
+      recognition.onresult = function(event) {
+        let transcript = '';
+        for (let i = event.resultIndex; i < event.results.length; i++) {
+          transcript += event.results[i][0].transcript;
+        }
+        chatInput.value = transcript;
+        chatInput.style.height = "auto";
+        chatInput.style.height = Math.min(chatInput.scrollHeight, 110) + "px";
+      };
+
+      recognition.onerror = function(event) {
+        console.warn("Speech recognition error:", event.error);
+        stopRecording();
+      };
+
+      recognition.onend = function() {
+        stopRecording();
+        var text = chatInput.value.trim();
+        if (text && !isProcessing) {
+          sendMessage(text);
+        }
+      };
+
+      micBtn.addEventListener("click", function() {
+        if (isRecording) {
+          recognition.stop();
+        } else {
+          chatInput.value = "";
+          try {
+            recognition.start();
+          } catch(err) {
+            console.error("Mic start error:", err);
+          }
+        }
+      });
+    } else {
+      micBtn.style.display = "none";
+    }
+
+    function stopRecording() {
+      isRecording = false;
+      micBtn.classList.remove("recording");
+      micBtn.title = "Bicara (Voice Input)";
+      chatInput.placeholder = "Ketik atau gunakan suara...";
+    }
+
+    // ── Text To Speech (Read Aloud) ──
+    function speakText(text) {
+      if (!window.speechSynthesis) return;
+      window.speechSynthesis.cancel(); // Stop any current speech
+
+      // Clean HTML tags and markdown formatting before speaking
+      var plainText = text.replace(/<[^>]+>/g, '').replace(/\*/g, '').replace(/`/g, '');
+      var utterance = new SpeechSynthesisUtterance(plainText);
+      utterance.lang = 'id-ID';
+      utterance.rate = 1.0;
+      utterance.pitch = 1.0;
+
+      window.speechSynthesis.speak(utterance);
+    }
+
+    // ── Send & Append Messages ──
     async function sendMessage(text) {
       isProcessing = true;
       sendBtn.disabled = true;
@@ -523,7 +669,7 @@
 
       var avatarHtml = "";
       if (role === "bot") {
-        avatarHtml = '<div class="msg-avatar"><img src="/pdam-makassar.png" alt="PDAM" width="30" height="30"></div>';
+        avatarHtml = '<div class="msg-avatar"><img src="/pdam-makassar.png" alt="PDAM" width="32" height="32"></div>';
       }
 
       var displayText = text;
@@ -543,7 +689,12 @@
 
       var renderedText = role === "bot" ? markdownToHtml(displayText) : escapeHtml(displayText);
 
-      wrapper.innerHTML = avatarHtml + '<div class="msg-content">' + renderedText + sourcesHtml + '</div>';
+      var ttsButtonHtml = "";
+      if (role === "bot") {
+        ttsButtonHtml = '<div class="msg-header-bar"><span></span><button class="tts-btn" onclick="speakText(this.dataset.text)" data-text="' + escapeHtml(displayText) + '" title="Dengarkan Suara"><span class="material-icons-round">volume_up</span> Baca</button></div>';
+      }
+
+      wrapper.innerHTML = avatarHtml + '<div class="msg-content">' + ttsButtonHtml + renderedText + sourcesHtml + '</div>';
 
       chatMessages.appendChild(wrapper);
       chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -552,7 +703,7 @@
     function appendTyping() {
       var wrapper = document.createElement("div");
       wrapper.className = "message bot";
-      wrapper.innerHTML = '<div class="msg-avatar"><img src="/pdam-makassar.png" alt="PDAM" width="30" height="30"></div>' +
+      wrapper.innerHTML = '<div class="msg-avatar"><img src="/pdam-makassar.png" alt="PDAM" width="32" height="32"></div>' +
         '<div class="msg-content"><div class="typing-indicator"><span></span><span></span><span></span></div></div>';
       chatMessages.appendChild(wrapper);
       chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -566,17 +717,16 @@
     }
 
     /**
-     * Robust markdown-to-HTML converter for Gemini LLM output.
-     * Converts **bold**, *italic*, `code`, numbered/bullet lists to proper HTML.
-     * Guarantees no raw ** or markdown syntax appears in rendered output.
+     * Robust markdown-to-HTML converter.
+     * Converts **bold**, *italic*, `code`, lists to HTML.
      */
     function markdownToHtml(text) {
       var html = escapeHtml(text);
 
-      // Inline code: `text`
+      // Inline code
       html = html.replace(/`([^`]+?)`/g, '<code>$1</code>');
 
-      // Bold: **text** or __text__ (multiple passes for adjacent patterns)
+      // Bold: **text**
       var prev;
       do {
         prev = html;
@@ -584,13 +734,13 @@
         html = html.replace(/__(.+?)__/g, '<strong>$1</strong>');
       } while (html !== prev);
 
-      // Italic: single *text* (not inside words)
+      // Italic: *text*
       html = html.replace(/(?<!\w)\*([^*]+?)\*(?!\w)/g, '<em>$1</em>');
 
-      // Strip any remaining stray ** that were not matched
+      // Strip stray **
       html = html.replace(/\*\*/g, '');
 
-      // Block-level: lists and paragraphs
+      // Block-level
       var lines = html.split('\n');
       var result = [];
       var inOl = false;
